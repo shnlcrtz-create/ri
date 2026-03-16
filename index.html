@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+                                                <title>LoginTech</title>
+
+<style>
+                                                    /* RESET */
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+                                                    /* BACKGROUND */
+    body{
+        height:100vh;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background:linear-gradient(135deg,#000000,#0f2027,#203a43,#2c5364);
+        background-size:400% 400%;
+        animation:gradientBG 10s ease infinite;
+        overflow:hidden;
+    }
+
+    @keyframes gradientBG{
+        0%{background-position:0% 50%;}
+        50%{background-position:100% 50%;}
+        100%{background-position:0% 50%;}
+    }
+
+                                                    /* SUBTITLE */
+    .subtitle{
+        font-size:13px;
+        color:#ddd;
+        margin-bottom:20px;
+        letter-spacing:1px;
+    }
+    
+                                                    /* PARTICLES */
+    .particles span{
+        position:absolute;
+        display:block;
+        width:4px;
+        height:4px;
+        background:white;
+        opacity:0.5;
+        animation:move 20s linear infinite;
+    }
+
+    @keyframes move{
+        0%{ transform:translateY(100vh); }
+        100%{ transform:translateY(-10vh); }
+    }
+
+                                                    /* LOGIN CARD */
+    .container{
+        width:330px;
+        padding:40px;
+        border-radius:25px;
+        background:rgba(255,255,255,0.08);
+        backdrop-filter:blur(15px);
+        border:1px solid rgba(255,255,255,0.2);
+        box-shadow:0 8px 32px rgba(0,0,0,0.4);
+        color:white;
+        text-align:center;
+        z-index:1;
+    }
+
+                                                    /* LOGO */
+    .logo{
+        font-size:22px;
+        font-weight:bold;
+        margin-bottom:20px;
+        letter-spacing:2px;
+    }
+
+                                                    /* PROFILE ICON */
+    .profile{
+        width:80px;
+        height:80px;
+        border-radius:50%;
+        background:rgba(255,255,255,0.2);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin:auto;
+        font-size:35px;
+        margin-bottom:25px;
+        box-shadow:0 0 20px rgba(0,200,255,.6);
+    }
+
+                                                    /* INPUT STYLE */
+    .inputBox{
+        position:relative;
+        margin-bottom:25px;
+    }
+
+    .inputBox input{
+        width:100%;
+        padding:10px 35px 10px 30px;
+        background:transparent;
+        border:none;
+        border-bottom:1px solid rgba(255,255,255,0.7);
+        color:white;
+        outline:none;
+    }
+
+    .inputBox label{
+        position:absolute;
+        left:30px;
+        top:10px;
+        font-size:13px;
+        color:#ddd;
+        transition:0.3s;
+        pointer-events:none;
+    }
+
+    .inputBox input:focus + label,
+    .inputBox input:valid + label{
+        top:-10px;
+        font-size:11px;
+        color:#00c6ff;
+    }
+
+    .icon{
+        position:absolute;
+        left:0;
+        top:10px;
+    }
+
+    .show{
+        position:absolute;
+        right:0;
+        top:10px;
+        cursor:pointer;
+    }
+
+                                                    /* OPTIONS */
+    .options{
+        display:flex;
+        justify-content:space-between;
+        font-size:12px;
+        margin-bottom:25px;
+    }
+
+    .options a{
+        color:white;
+        text-decoration:none;
+    }
+
+                                                    /* BUTTON */
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:25px;
+        background:linear-gradient(90deg,#0072ff,#00c6ff);
+        color:white;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    button:hover{
+        transform:scale(1.05);
+        box-shadow:0 0 15px #00c6ff;
+    }
+
+                                                    /* MOBILE */
+    @media(max-width:400px){
+        .container{
+            width:90%;
+            padding:30px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+                                                    <!-- PARTICLES -->
+<div class="particles">
+    <span style="left:10%"></span>
+    <span style="left:20%"></span>
+    <span style="left:30%"></span>
+    <span style="left:40%"></span>
+    <span style="left:50%"></span>
+    <span style="left:60%"></span>
+    <span style="left:70%"></span>
+    <span style="left:80%"></span>
+    <span style="left:90%"></span>
+</div>
+
+                                                    <!-- LOGIN CARD -->
+<div class="container">
+   
+    <div class="logo">Login</div>
+    <div class="profile">👤</div>
+    <p class="subtitle">Sign in to your account</p>
+    
+                                                    <!-- FORM -->
+    <form onsubmit="checkLogin(); return false;">
+
+        <div class="inputBox">
+            <span class="icon">📧</span>
+            <input type="text" id="username" required>
+            <label>Username</label>
+        </div>
+
+        <div class="inputBox">
+            <span class="icon">🔒</span>
+            <input type="password" id="password" required>
+            <label>Password</label>
+            <span class="show" onclick="togglePassword()">👁️</span>
+        </div>
+
+        <p id="error-message" style="display:none; color:red; font-size:12px;">
+            Invalid Username or Password
+        </p>
+
+        <div class="options">
+            <label><input type="checkbox"> Remember</label>
+            <a href="#">Forgot?</a>
+        </div>
+
+        <button type="submit">LOGIN</button>
+
+    </form>
+
+</div>
+
+                                                <!-- JAVASCRIPT -->
+                        <!-------------------------Function Area--------------------->
+<script>
+
+        // Step 1: Set your correct username & password here
+    var correctUsername = "admin";
+    var correctPassword = "1234";
+
+        // Step 2: This function runs when Submit is clicked
+    function checkLogin(){
+
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        // Compare what the user typed with the correct values
+    if(user === correctUsername && pass === correctPassword){
+            // If correct, go to index.html
+        window.location.href="SAB'S.html";
+    } else {
+            // If wrong, show error
+            document.getElementById("error-message").style.display="block";
+            }
+    }
+
+            // Step 3: Cancel button clears the form
+    function clearForm(){
+        document.getElementById("username").value="";
+        document.getElementById("password").value="";
+        document.getElementById("error-message").style.display="none";
+    }
+
+                            // Toggle password visibility
+    function togglePassword(){
+        var pass = document.getElementById("password");
+        if(pass.type === "password"){
+            pass.type = "text";
+        } else {
+            pass.type = "password";
+        }
+        }
+
+                            // Press Enter to login
+    document.addEventListener("keypress",function(e){
+        if(e.key==="Enter"){
+            checkLogin();
+        }
+        });
+
+</script>
+
+</body>
+</html>

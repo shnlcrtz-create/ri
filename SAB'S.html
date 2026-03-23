@@ -1,0 +1,210 @@
+<html>
+<head>
+<title>SHANEL'S Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+    html{ scroll-behavior:smooth; }
+
+    body{
+        font-family:'Poppins', sans-serif;
+        background:#ededed;
+        text-align:center;
+        margin:0;
+    }
+
+                                              /* HEADER */
+    .header{
+        background:#052545;
+        color:white;
+        padding:35px 20px 25px;
+        font-size:30px;
+        font-weight:600;
+    }
+
+                                               /* PROFILE PIC */
+    .profile{
+        width:120px;
+        height:120px;
+        border-radius:50%;
+        background:#ddd;
+        margin:20px auto 10px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        font-size:14px;
+        color:#666;
+    }
+
+                                                /* NAV BAR */
+    .navbar{
+        position:sticky;
+        top:0;
+        background: #333;
+        padding:15px;
+        box-shadow:0 2px 8px rgba(0,0,0,0.08);
+        z-index:1000;
+    }
+
+    .navbar a{
+        margin:0 25px;
+        text-decoration:none;
+        font-weight:600;
+        color:white;
+    }
+
+   .navbar a:hover {
+    background-color: #575757; 
+    color: #fff;              
+    }
+
+    .navbar a[href="#about"]:hover {
+        background-color: #2c3e50; 
+    }
+
+    .navbar a[href="#services"]:hover {
+        background-color: #27ae60; 
+    }
+
+    .navbar a[href="#contact"]:hover {
+        background-color: #e74c3c; 
+}
+
+                                                /* CONTENT */
+    .container{
+        width:85%;
+        max-width:900px;
+        margin:40px auto;
+        display:grid;
+        flex-direction:column;
+        align-items: center; 
+    }
+
+    .box{
+        background:white;
+        padding:35px;
+        margin:30px 0;
+        border-radius:14px;
+        box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
+
+                                                /* TITLE COLORS */
+    .about-title{ color:#2c3e50; }
+    .services-title{ color:#27ae60; }
+    .contact-title{ color:#e74c3c; }
+
+    ul{
+        text-align:center;
+        margin:auto;
+        width: fit-content;
+        line-height:1.6;
+        }
+
+    .tagline{
+        margin-top:20px;
+        font-weight:bolder;
+        color:#333;
+    }
+p{
+    text-align: justify;
+}
+    
+                                                /* FOOTER */
+    .footer{
+        margin-top:50px;
+        padding:25px;
+        background:#333;
+        color:white;
+    }
+    .header .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid white;
+        object-fit: cover;
+        margin-top: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="header">SHANEL'S PORTFOLIO
+        <div class="profile"><img src="me.jpeg"></div>
+    </div>
+
+    <div class="navbar">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+
+                                                <!-- ABOUT -->
+    <div class="box" id="about">
+            <h2 class="about-title">About Myself</h2>
+
+                <p>
+                My name is Shanel Cortez, a 19-year-old second-year college student currently taking up Computer Technology.
+                    
+                I am passionate about learning how technology works and how it continous to shape the modern world. As a student in this field, I am constantly developing my knowledge in programming, computer systems, networking, and digital tools that are essential in today's tech-driven environment.
+                </p>
+
+
+                <p>
+                I also have knowledge in multimedia and system development. I used CorelDRAW for logo design and created design projects,
+                and I also developed a simple system in Microsoft Excel using VBA. One example is the Cafeteria Management System that we
+                created for our project, which helped manage orders and records efficiently. These experiences strengthened my creativity,
+                technical skills, and problem-solving abilities.
+                </p>
+                 
+                <p>
+                My goal is to become a skilled and competent IT professional who can attribute meaningfully to the industry. I am committed to expanding my knowledge, gaining hands-on experience, and staying updated with the latest technological advancement. Through dedication and hard work, I aim to build a strong foundation that will prepare me for future opportunities in the field of technology.
+                </p>
+        
+        
+        
+        
+        </div>
+
+                                               <!-- SERVICES -->
+    <div class="box" id="services">
+            <h2 class="services-title">My Services</h2>
+
+    <ul>
+                <li>Excel VBA Automation</li>
+                <li>Computer Troubleshooting</li>
+                <li>Basic Logo Design (CorelDRAW)</li>
+                <li>Technical Support Assistance</li>
+                <li>Device Setup &amp; Configuration</li>
+                <li>File Organization and Documentation</li>
+                <li>Data Entry and Spreadsheet Formatting</li>
+                <li>System Maintenance &amp; Optimizations</li>
+                <li>Software Installation &amp; Configuration</li>
+                <li>Graphic Layouts (Posters, Labels, Banners, Postcard, Invitation)</li>
+    </ul>
+
+   </div>
+
+                                            <!-- CONTACT -->
+    <div class="box" id="contact">
+          <h2 class="contact-title">Contact Me</h2>
+
+    <ul>
+                <li>Phone Number: <a href="tel:+639291944750">+63 9291944750</a></li>
+                <li>Email: <a href="mailto:manahanshanelcortez@gmail.com">manahanshanelcortez@gmail.com</a></li>
+    </ul>
+                                               
+                <p class="tagline">YOU CAN CONTACT ME FOR SCHOOL PROJECTS, FREELANCE DESIGN, OR TECHNICAL ASSISTANCE</p>
+
+    </div>
+                                            <a href="#Top"> Go to Top</a>
+</div>
+
+    <div class="footer">© 2026 Cortez | Computer Technology Student</div>
+
+</body>
+</html>
